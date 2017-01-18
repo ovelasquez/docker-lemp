@@ -1,6 +1,6 @@
 <?php
 
-echo "<p>WEB01 - This is a php/mysql connection test:</p>";
+echo "<p>WEB03 - This is a php/mysql connection test:</p>";
 
 # Fill our vars and run on cli
 # $ php -f db-connect-test.php
