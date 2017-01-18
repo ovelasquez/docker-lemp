@@ -32,8 +32,6 @@ services:
 ###########################
     mysql:
         image: mysql:latest
-        expose:
-            - 3306
         volumes:
             - database_data:/var/lib/mysql
         environment:
