@@ -83,7 +83,6 @@ services:
 
 # Setup the traefik Proxy/LB container
 ###########################
-
     traefik:
       image: traefik
       command: --web --docker --docker.domain=docker.localhost --logLevel=DEBUG
