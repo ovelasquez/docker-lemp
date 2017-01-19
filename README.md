@@ -1,6 +1,5 @@
 # LEMP for Docker
-
-Docker running Nginx cluster with PHP and MySQL. Traefik proxy/LB used for
+Docker running Nginx cluster with PHP and MySQL served by Traefik proxy/LB.
 
 ## Install
 Run docker-compose up -d. This will boot Docker and build the containers.
