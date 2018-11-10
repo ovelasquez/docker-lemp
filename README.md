@@ -21,9 +21,9 @@ $ docker ps
 ## Accesing sites
 Traefik has been set up to use name-based virtual hosting. Once the stack is up and running sites will be available at the following locations:
 
--  http://traefik.docker.localhost
--  http://nginx.docker.localhost
--  http://pma.docker.localhost
+-  Traefik LB - http://traefik.docker.localhost
+-  Nginx site - http://nginx.docker.localhost
+-  phpMyAdmin - http://pma.docker.localhost
 
 ## Updating a container
 The majority of the images used in the stack are pulled straight from Docker Hub apart from the PHP container. This is built from its own Dockerfile located at docker/php/Dockerfile. If you wanted to upgrade PHP from 5.6 to 7.2, changes are made in the Dockerfile and then the following docker-compose command can be run to update the PHP container without having reload the entire stack. 
