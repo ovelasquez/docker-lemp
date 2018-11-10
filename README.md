@@ -31,7 +31,7 @@ The majority of the images used in the stack are pulled straight from Docker Hub
 $ docker-compose up -d --build --no-deps php
 ```
 ## Uninstall
-To stop all "LEMP for docker" containers and delete them you can run: 
+To stop all "LEMP for docker" containers and delete them run: 
 ```
 $ docker-compose down 
 ```
