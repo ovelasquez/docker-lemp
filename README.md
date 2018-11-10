@@ -1,11 +1,37 @@
 # LEMP for Docker
-Docker running Nginx cluster with PHP and MySQL served by Traefik proxy/LB.
+A clustered LEMP example running on Docker. Contains 3 node Nginx cluster with PHP and MySQL served by Traefik proxy/LB.
+
+## Prerequisites
+The following software is required before running LEMP for Docker:
+- [Docker](https://docs.docker.com/install/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
 
 ## Install
-Run docker-compose up -d. This will boot Docker and build the containers.
+To build and start the complete stack simply run the following:
+```
+$ git clone git@github.com:markolly/vim-config.git
+$ cd docker-lemp
+$ docker-compose up -d
+```
+Containers can be checked for their current state by running:
+```
+$ docker ps
+```
 
-## Update a Container
-Run docker-compose up -d --build --no-deps \<service>
+## Accesing sites
+Traefik has been set up to use name-based virtual hosting. Once the stack is up and running sites will be available at the following locations:
 
+-  http://traefik.docker.localhost
+-  http://nginx.docker.localhost
+-  http://pma.docker.localhost
+
+## Updating a container
+The majority of the images used in the stack are pulled straight from Docker Hub apart from the PHP container. This is built from its own Dockerfile located in docker/php/Dockerfile. If you wanted to upgrade PHP from 5.6 to 7.2, changes are made in the Dockerfile and then the following docker-compose command can be run to update the PHP container without having reload the entire stack. 
+```
+$ docker-compose up -d --build --no-deps php
+```
 ## Uninstall
-Run docker-compose down will stop running containers and delete them. 
+To stop all "LEMP for docker" containers and delete them you can run: 
+```
+$ docker-compose down 
+```
