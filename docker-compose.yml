@@ -18,7 +18,7 @@ services:
         labels:
           - "traefik.port=80"
           - "traefik.backend=nginx-cluster"
-          - "traefik.frontend.rule=Host:nginx.docker.localhost"
+          - "traefik.frontend.rule=Host:nginx.somostinn.com.ve"
     web02:
         image: nginx:1.14
         container_name: lemp-web02
@@ -29,7 +29,7 @@ services:
         labels:
           - "traefik.port=80"
           - "traefik.backend=nginx-cluster"
-          - "traefik.frontend.rule=Host:nginx.docker.localhost"
+          - "traefik.frontend.rule=Host:nginx.somostinn.com.ve"
     web03:
         image: nginx:1.14
         container_name: lemp-web03
@@ -40,7 +40,7 @@ services:
         labels:
           - "traefik.port=80"
           - "traefik.backend=nginx-cluster"
-          - "traefik.frontend.rule=Host:nginx.docker.localhost"
+          - "traefik.frontend.rule=Host:nginx.somostinn.com.ve"
 
 # Setup the PHP container
 ###########################
@@ -86,14 +86,14 @@ services:
           PMA_ARBITRARY: 1
         labels:
           - "traefik.port=80"
-          - "traefik.frontend.rule=Host:pma.docker.localhost"
+          - "traefik.frontend.rule=Host:pma.somostinn.com.ve"
 
 # Setup the traefik Proxy/LB container
 ###########################
     traefik:
       image: traefik:v1.7.4
       container_name: lemp-traefik
-      command: --web --docker --docker.domain=docker.localhost --logLevel=DEBUG
+      command: --web --docker --docker.domain=somostinn.com.ve --logLevel=DEBUG
       ports:
         - "80:80"
         - "8080:8080"
@@ -101,5 +101,5 @@ services:
         - /var/run/docker.sock:/var/run/docker.sock
         - /dev/null:/traefik.toml
       labels:
-        - "traefik.frontend.rule=Host:traefik.docker.localhost"
+        - "traefik.frontend.rule=Host:traefik.somostinn.com.ve"
         - "traefik.port=8080"
